@@ -1,0 +1,211 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f2f5;
+    background-image: radial-gradient(circle at top left, #e2e8f0 1px, transparent 1px),
+                      radial-gradient(circle at bottom right, #e2e8f0 1px, transparent 1px),
+                      linear-gradient(135deg, #f5f7fa 25%, #c3cfe2 100%);
+    background-size: 20px 20px;
+    display: flex;
+    justify-content: center;
+     align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+
+.internship-card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+    overflow: hidden;
+    position: relative;
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.internship-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(90deg, #007bff, #00c6ff);
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+}
+
+.internship-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+.internship-card h3 {
+    font-size: 1.9em;
+    color: #2c3e50;
+    margin-bottom: 22px;
+    font-weight: 700;
+    line-height: 1.35;
+    letter-spacing: -0.5px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.internship-card ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+.internship-card ul li {
+    font-size: 1.15em;
+    color: #555;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    line-height: 1.4;
+}
+
+.internship-card ul li::before {
+    content: '';
+    color: #007bff;
+    font-size: 1.3em;
+    margin-right: 12px;
+    line-height: 1;
+    transform: translateY(-1px);
+}
+
+/* Add icons before list items */
+.internship-card ul li.duration::before {
+    content: '⏲️';
+    margin-right: 8px;
+    vertical-align: middle;
+}
+.internship-card ul li.location::before {
+    content: '📍';
+    margin-right: 8px;
+    vertical-align: middle;
+}
+.internship-card ul li.stipend::before {
+    content: '💵';
+    margin-right: 8px;
+    vertical-align: middle;
+}
+.internship-card ul li.start-date::before {
+    content: '🗓️';
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+/* Fade-in animation for cards */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Add subtle glow on button hover */
+.internship-card button:hover {
+    background: linear-gradient(45deg, #0056b3, #009ee6);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.7), 0 0 8px 3px rgba(0, 123, 255, 0.5);
+}
+
+/* Add subtle background gradient behind container */
+body {
+    background-image: radial-gradient(circle at top left, #e2e8f0 1px, transparent 1px),
+                      radial-gradient(circle at bottom right, #e2e8f0 1px, transparent 1px),
+                      linear-gradient(135deg, #f5f7fa 25%, #c3cfe2 100%);
+}
+
+.internship-card .button-wrapper {
+    margin-top: auto;
+    text-align: center;
+}
+
+.internship-card button {
+    background: linear-gradient(45deg, #007bff, #00c6ff);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 16px 30px;
+    font-size: 1.15em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+    letter-spacing: 0.5px;
+    outline: none;
+}
+
+.internship-card button:hover {
+    background: linear-gradient(45deg, #0056b3, #009ee6);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.45);
+}
+
+.internship-card button:active {
+    transform: translateY(0) scale(1);
+    box-shadow: 0 3px 10px rgba(0, 123, 255, 0.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    body {
+        padding: 30px 15px;
+    }
+    .internship-card {
+        padding: 30px;
+    }
+    .internship-card h3 {
+        font-size: 1.7em;
+    }
+    .internship-card ul li {
+        font-size: 1.05em;
+    }
+    .internship-card button {
+        font-size: 1.05em;
+        padding: 14px 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    .internship-card {
+        padding: 25px;
+    }
+    .internship-card h3 {
+        font-size: 1.5em;
+    }
+    .internship-card ul li {
+        font-size: 1em;
+        margin-bottom: 10px;
+    }
+    .internship-card button {
+        font-size: 1em;
+        padding: 12px 20px;
+    }
+}
