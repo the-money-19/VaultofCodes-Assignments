@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Chocolate Cake Recipe Card</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="recipe-card">
+        <h1 class="recipe-title">Gourmet Chocolate Cake</h1>
+        <div class="image-container">
+            <img src="cake.jpeg" alt="Delicious Chocolate Cake" class="dish-image">
+            <div class="image-overlay"></div>
+        </div>
+
+        <div class="prep-info">
+            <p><i class="fas fa-clock"></i> Preparation Time: <span id="prep-time">45 minutes</span></p>
+            <p><i class="fas fa-users"></i> Serving Size: <span id="serving-size">8 people</span></p>
+        </div>
+
+        <div class="progress-bar-container">
+            <div class="progress-bar" id="progressBar"></div>
+            <div class="progress-text" id="progressText">0% Complete</div>
+        </div>
+
+        <div class="button-group">
+            <button id="toggleIngredients" class="action-btn">Show Ingredients</button>
+            <button id="startCooking" class="action-btn start-btn">Start Cooking</button>
+        </div>
+
+        <div class="ingredients-section collapsed" id="ingredientsSection">
+            <h2>Ingredients <i class="fas fa-carrot"></i></h2>
+            <ul class="ingredients-list">
+                <li><label><input type="checkbox" /> 1 ½ cups all-purpose flour</label></li>
+                <li><label><input type="checkbox" /> 1 ½ cups granulated sugar</label></li>
+                <li><label><input type="checkbox" /> ¾ cup unsweetened cocoa powder</label></li>
+                <li><label><input type="checkbox" /> 1 ½ teaspoons baking soda</label></li>
+                <li><label><input type="checkbox" /> ¾ teaspoon baking powder</label></li>
+                <li><label><input type="checkbox" /> ¾ teaspoon salt</label></li>
+                <li><label><input type="checkbox" /> 1 cup buttermilk</label></li>
+                <li><label><input type="checkbox" /> ½ cup vegetable oil</label></li>
+                <li><label><input type="checkbox" /> 2 large eggs</label></li>
+                <li><label><input type="checkbox" /> 1 teaspoon vanilla extract</label></li>
+                <li><label><input type="checkbox" /> 1 cup boiling water</label></li>
+            </ul>
+        </div>
+
+        <div class="instructions-section">
+            <h2>Instructions <i class="fas fa-utensils"></i></h2>
+            <ul class="steps-list" id="stepsList">
+                <li>Preheat oven to 350°F (175°C). Grease and flour two 9-inch round cake pans.</li>
+                <li>In a large bowl, whisk together flour, sugar, cocoa, baking soda, baking powder, and salt.</li>
+                <li>Add buttermilk, oil, eggs, and vanilla extract; beat on medium speed for 2 minutes.</li>
+                <li>Stir in boiling water (batter will be thin).</li>
+                <li>Pour evenly into prepared pans.</li>
+                <li>Bake for 30-35 minutes, or until a wooden skewer inserted into the center comes out clean.</li>
+                <li>Cool in the pans for 10 minutes before inverting onto a wire rack to cool completely.</li>
+                <li>Frost with your favorite chocolate frosting.</li>
+            </ul>
+            <button id="nextStep" class="action-btn next-btn" style="display: none;">Next Step <i class="fas fa-arrow-right"></i></button>
+            <button id="resetCooking" class="action-btn reset-btn" style="display: none;">Reset <i class="fas fa-redo"></i></button>
+        </div>
+
+        <div class="timer-section" style="display: none;">
+            <h3>Cooking Timer: <span id="cookingTimer">00:00</span></h3>
+        </div>
+
+        <button id="printRecipe" class="action-btn print-btn"><i class="fas fa-print"></i> Print Recipe</button>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>
